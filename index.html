@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Management System (CSC265) - TU BSc CSIT Archive & Solutions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <div class="brand-logo">DB</div>
+                <div class="brand-text">
+                    <h1>TU BSc CSIT — DBMS</h1>
+                    <span>Course Code: CSC265 | 4th Semester</span>
+                </div>
+            </a>
+            
+            <div class="nav-search">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="globalSearch" class="search-input" placeholder="Search questions, SQL queries, 2PL, ACID, Normalization...">
+            </div>
+
+            <div class="nav-actions">
+                <button id="themeToggle" class="btn-icon">
+                    <span>🌙</span> Dark Mode
+                </button>
+                <button id="printBtn" class="btn-icon">
+                    <span>🖨️</span> Print / PDF
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Header matching reference design -->
+    <section class="hero-header">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-subject">
+                    <span>📚</span> Subject Portal
+                </div>
+                <h1 class="hero-title">Database Management System</h1>
+                <div class="hero-subtitle">Tribhuvan University • Institute of Science and Technology (IOST)</div>
+                <p class="hero-desc">
+                    The course covers the basic concepts of databases, database system concepts and architecture, data modeling using ER diagram, relational model, SQL, relational algebra and calculus, normalization, transaction processing, concurrency control, and database recovery.
+                </p>
+                <div class="hero-stats">
+                    <span class="stat-chip"><strong>8</strong> Exam Years</span>
+                    <span class="stat-chip"><strong>96</strong> Solved Questions</span>
+                    <span class="stat-chip"><strong>10</strong> Syllabus Units</span>
+                    <span class="stat-chip">Full Marks: <strong>60 + 20 + 20</strong></span>
+                    <span class="stat-chip">Pass Marks: <strong>24 + 8 + 8</strong></span>
+                    <span class="stat-chip">Credit Hours: <strong>3</strong></span>
+                </div>
+            </div>
+            
+            <div class="hero-illustration">
+                <!-- Inline SVG Student & Database Illustration -->
+                <svg class="dbms-svg-illustration" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Desk -->
+                    <rect x="20" y="145" width="200" height="12" rx="4" fill="#0284c7" />
+                    <!-- Laptop -->
+                    <rect x="70" y="90" width="80" height="52" rx="4" fill="#0f172a" />
+                    <rect x="74" y="94" width="72" height="42" rx="2" fill="#38bdf8" />
+                    <path d="M80 102H110M80 110H130M80 118H105M80 126H120" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
+                    <rect x="60" y="142" width="100" height="4" rx="2" fill="#64748b" />
+                    <!-- Database Cylinders -->
+                    <g transform="translate(165, 55)">
+                        <!-- Top cylinder -->
+                        <ellipse cx="25" cy="15" rx="25" ry="10" fill="#0284c7" />
+                        <path d="M0 15V45C0 50.5 11.2 55 25 55C38.8 55 50 50.5 50 45V15" fill="#0369a1" />
+                        <ellipse cx="25" cy="45" rx="25" ry="10" fill="#38bdf8" />
+                        <!-- Middle disk -->
+                        <path d="M0 45V75C0 80.5 11.2 85 25 85C38.8 85 50 80.5 50 75V45" fill="#0284c7" />
+                        <ellipse cx="25" cy="75" rx="25" ry="10" fill="#0284c7" />
+                    </g>
+                    <!-- Books stack -->
+                    <g transform="translate(25, 105)">
+                        <rect x="0" y="28" width="40" height="10" rx="2" fill="#10b981" />
+                        <rect x="2" y="16" width="36" height="10" rx="2" fill="#f59e0b" />
+                        <rect x="5" y="4" width="30" height="10" rx="2" fill="#ef4444" />
+                    </g>
+                    <!-- Floating Nodes / Cloud / Sparkles -->
+                    <circle cx="50" cy="40" r="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+                    <text x="44" y="45" font-size="12" font-family="sans-serif" font-weight="bold" fill="#0284c7">SQL</text>
+                    <circle cx="120" cy="30" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" />
+                    <text x="113" y="35" font-size="13" font-family="sans-serif" font-weight="bold" fill="#b45309">2PL</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs Bar -->
+    <nav class="tabs-bar">
+        <div class="tabs-container">
+            <button class="tab-btn active" data-tab="question-banks">
+                <span>📑</span> Question Banks
+            </button>
+            <button class="tab-btn" data-tab="syllabus">
+                <span>📋</span> Syllabus
+            </button>
+            <button class="tab-btn" data-tab="matrix">
+                <span>📊</span> PYQ Matrix & Trends
+            </button>
+            <button class="tab-btn" data-tab="recall">
+                <span>⚡</span> Rapid Recall
+            </button>
+            <button class="tab-btn" data-tab="chapters">
+                <span>📖</span> Chapter Notes
+            </button>
+            <button class="tab-btn" data-tab="books">
+                <span>📚</span> Text Books
+            </button>
+            <button class="tab-btn" data-tab="practical">
+                <span>💻</span> Practical & Viva
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <!-- Tab 1: Question Banks (Default) -->
+        <div id="tab-question-banks" class="tab-pane active">
+            <div class="qb-layout">
+                <!-- Left Sidebar: Exam Years -->
+                <aside class="qb-sidebar">
+                    <div class="sidebar-title">Exam Year</div>
+                    <div class="year-list" id="yearList">
+                        <!-- Populated by app.js -->
+                    </div>
+                </aside>
+
+                <!-- Right Content Pane: Official Exam Paper & Solutions -->
+                <section class="qb-content" id="examPaperContent">
+                    <!-- Populated by app.js -->
+                </section>
+            </div>
+        </div>
+
+        <!-- Tab 2: Syllabus -->
+        <div id="tab-syllabus" class="tab-pane">
+            <div style="margin-bottom: 24px;">
+                <h2 style="font-size: 22px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px;">
+                    Official Syllabus — Database Management System (CSC265)
+                </h2>
+                <p style="font-size: 14.5px; color: var(--text-secondary);">
+                    Full 45-Hour syllabus breakdown across all 10 units with priorities based on past TU examination recurrence.
+                </p>
+            </div>
+            <div id="syllabusContent"></div>
+        </div>
+
+        <!-- Tab 3: PYQ Matrix & Analysis -->
+        <div id="tab-matrix" class="tab-pane">
+            <div id="matrixContent"></div>
+        </div>
+
+        <!-- Tab 4: Rapid Recall -->
+        <div id="tab-recall" class="tab-pane">
+            <div id="recallContent"></div>
+        </div>
+
+        <!-- Tab 5: Chapter Notes -->
+        <div id="tab-chapters" class="tab-pane">
+            <div id="chaptersContent"></div>
+        </div>
+
+        <!-- Tab 6: Textbooks -->
+        <div id="tab-books" class="tab-pane">
+            <div id="booksContent"></div>
+        </div>
+
+        <!-- Tab 7: Practical & Viva -->
+        <div id="tab-practical" class="tab-pane">
+            <div id="practicalContent"></div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+        <p><strong>TU BSc CSIT Database Management System (CSC265) Comprehensive Archive</strong></p>
+        <p style="margin-top: 6px;">Compiled from official TU past question papers (2076–2082), verified solutions, and curriculum guidelines.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
